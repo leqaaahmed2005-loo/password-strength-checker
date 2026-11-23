@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Password Checker</title>
+<style>
+body { font-family: Arial; text-align: center; margin-top: 100px; }
+input { padding: 10px; font-size: 18px; width: 250px; }
+#result { font-size: 22px; font-weight: bold; margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>Password Strength Checker</h2>
+<input type="password" id="password" placeholder="اكتب الباسورد هنا" oninput="checkPassword()">
+<p id="result"></p>
+
+<script>
+function checkPassword() {
+  let p = document.getElementById("password").value;
+  let result = document.getElementById("result");
+  if (p.length < 4) { result.textContent = "ضعيف"; result.style.color = "red"; }
+  else if (p.length < 8) { result.textContent = "متوسط"; result.style.color = "orange"; }
+  else { result.textContent = "قوي"; result.style.color = "green"; }
+}
+</script>
+</body>
+</html>
